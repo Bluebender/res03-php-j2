@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Formulaire</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <?php @$couleur = $_POST["couleur_cv"]; ?>
+    
+    <header>
+        <h1><?php echo $_POST["nom"]; echo " "; echo $_POST["prenom"] ?></h1>
+        <h2>Développeur WEB</h2>
+        <p><?php echo $_POST["couleur_cv"]; ?></p>
+    </header>
+    
+    <?php var_dump($_POST); ?>
+    
+    <section>
+        <div id=cv_colonne_gauche>
+            <h1>INFORMATIONS</h1>
+            <h2>Contact</h2>
+            <h3>Email</h3>
+            <p><?php echo $_POST["email"]; ?></p>
+            <h3>Téléphone</h3>
+            <p><?php echo $_POST["telephone"]; ?></p>
+            <h3>Linkedin</h3>
+            <p><?php echo $_POST["linkedin"]; ?></p>
+            <h3>GitHub</h3>
+            <p><?php echo $_POST["github"]; ?></p>
+            
+            <h2>Biographie</h2>
+            <p><?php echo $_POST["biographie"]; ?></p>
+            
+            <h2>Loisirs</h2>
+            <dl>
+                <li><?php echo $_POST["loisir_1"]; ?></li>
+                <li><?php echo $_POST["loisir_2"]; ?></li>
+                <li><?php echo $_POST["loisir_3"]; ?></li>
+                <li><?php echo $_POST["loisir_4"]; ?></li>
+            </dl>
+        </div>
+        
+        <div id=cv_colonne_gauche>
+            <h1>COMPETENCES</h1>
+            <h2>Langages de programmation</h2>
+            <dl>
+                    <?php foreach ($_POST["Langage_prog"] as $langue): ?>
+                        <li><?php echo $langue; ?></li>
+                    <?php endforeach; ?>
+            </dl>
+            
+            <h2>Frameworks & Librairies</h2>
+            <dl>
+                    <?php foreach ($_POST["f&l"] as $frame): ?>
+                        <li><?php echo $frame; ?></li>
+                    <?php endforeach; ?>
+            </dl>
+            
+            <h2>Logiciels</h2>
+            <dl>
+                    <?php foreach ($_POST["logiciel"] as $langue): ?>
+                        <li><?php echo $langue; ?></li>
+                    <?php endforeach; ?>
+            </dl>
+            
+            <h2>Langues</h2>
+            <dl>
+                    <?php foreach ($_POST["langues"] as $langue): ?>
+                        <li><?php echo $langue; ?></li>
+                    <?php endforeach; ?>
+            </dl>
+            
+        </div>
+    </section>
+
+</body>
+</html>
